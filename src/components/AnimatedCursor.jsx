@@ -1,5 +1,6 @@
 import React, { useEffect, useCallback, useState, useRef, Fragment } from "react";
 import useEventListener from "../useEventListener";
+import { CursorInner } from "../styled-components/cursorInner";
 
 function AnimatedCursor({ innerSize = 50, innerScale = 1.4 }) {
     const cursorInnerRef = useRef();
@@ -95,21 +96,9 @@ function AnimatedCursor({ innerSize = 50, innerScale = 1.4 }) {
         };
     }, [isActive]);
 
-    const styles = {
-        cursorInner: {
-            position: "fixed",
-            width: innerSize,
-            height: innerSize,
-            pointerEvents: "none",
-            transition: "opacity 0.15s ease-in-out, transform 0.25s ease-in-out",
-            borderRadius: '50%',
-            border: '2px solid #ffffff3e'
-        }
-    };
-
   return (
     <Fragment>
-      <div ref={cursorInnerRef} style={styles.cursorInner} />
+      <CursorInner ref={cursorInnerRef} innerSize={innerSize} borderRadius={"50%"} />
     </Fragment>
   );
 }

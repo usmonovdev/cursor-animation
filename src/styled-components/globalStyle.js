@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import Noise from "../assets/noise.gif"
+import Noise from "../assets/noise.gif";
+import Cursor1 from "../assets/cursor-1.png";
 
 export const GlobalStyle = createGlobalStyle`
     * {
@@ -13,6 +14,7 @@ export const GlobalStyle = createGlobalStyle`
         height: 100vh;
         background-color: #13131d;
         color: white;
+        cursor: url(${Cursor1}), auto;
     };
 
     body::before {
@@ -31,5 +33,5 @@ export const Theme = {
     body: '#fff6f1',
     primaryBlue: "#00a3ff",
     primaryBlackBlue: "#212e48",
-    white: "#f5efe3",
+    white: "#ffffff",
 };
