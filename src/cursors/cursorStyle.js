@@ -14,4 +14,5 @@ export const CursorStyle = styled.div`
     transform: ${props => props.isScale ? `scale(1.4)` : `scale(1)`};
     opacity: ${props => props.opacity || "1"};
     pointer-events: none;
+    z-index: 10000;
 `

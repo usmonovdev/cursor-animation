@@ -1,23 +1,21 @@
-import React, { useEffect, useState } from "react";
-import { CursorStyle } from "./cursorStyle";
+import React, { useEffect, useRef, useState } from "react";
+import { Theme } from "../styled-components/globalStyle"
 
 const Cursor1 = ({ elementId }) => {
-  const width = 50;
-  const height = 50;
-  const duration = 0.1;
-  const scale = 1.4;
+  const innerSize = 30;
+  const innerScale = 0.7;
+  const outerScale = 1.4;
+  const innerRef = useRef();
+  const outerRef = useRef();
   const [isAvaliable, setIsAvaliable] = useState(true);
   const [isClicked, setIsClicked] = useState(false);
-  const [mousePosition, setMousePosition] = useState({
-    x: 0,
-    y: 0,
-  });
+  const [mousePosition, setMousePosition] = useState({x: 0, y: 0});
 
   useEffect(() => {
     const mouseMove = (e) => {
       setMousePosition({
-        x: e.clientX - `${width / 2}`,
-        y: e.clientY - `${height / 2}`,
+        x: e.clientX - `${innerSize / 2}`,
+        y: e.clientY - `${innerSize / 2}`,
       });
     };
     document.getElementById(elementId).addEventListener("mousemove", mouseMove);
@@ -36,6 +34,7 @@ const Cursor1 = ({ elementId }) => {
     document.getElementById(elementId).addEventListener("mouseup", () => {
       setIsClicked(false);
     });
+
     return () => {
       document
         .getElementById(elementId)
@@ -62,23 +61,45 @@ const Cursor1 = ({ elementId }) => {
     };
   }, []);
 
+  const style = {
+    innerStyle: {
+      top: mousePosition.y,
+      left: mousePosition.x,
+      width: innerSize,
+      height: innerSize,
+      borderRadius: "50%",
+      background: Theme.primaryBlue,
+      transition: "transform 150ms ease-out",
+      display: `${isAvaliable ? "block" : "none"}`,
+    },
+    outerStyle: {
+      top: mousePosition.y,
+      left: mousePosition.x,
+      width: innerSize,
+      height: innerSize,
+      borderRadius: "50%",
+      // background: Theme.primaryBlue,
+      border: `2px solid ${Theme.primaryBlue}`,
+      transition: "150ms ease-out",
+      display: `${isAvaliable ? "block" : "none"}`,
+      opacity: "0.5",
+    }
+  }
+
+  useEffect(() => {
+    if(isClicked) {
+      innerRef.current.style.transform = `scale(${innerScale})`
+      outerRef.current.style.transform = `scale(${outerScale})`
+    } else {
+      innerRef.current.style.transform = "scale(1)"
+      outerRef.current.style.transform = "scale(1)"
+    }
+  }, [isClicked, style]);
+
   return (
     <>
-      {isAvaliable ? (
-        <CursorStyle
-          y={mousePosition.y}
-          x={mousePosition.x}
-          width={width}
-          height={height}
-          tduration={duration}
-          scale={scale}
-          isScale={isClicked}
-          opacity={"0.5"}
-          gradus={"50%"}
-        ></CursorStyle>
-      ) : (
-        ""
-      )}
+      <div ref={innerRef} style={style.innerStyle} className="cursor" />
+      <div ref={outerRef} style={style.outerStyle} className="cursor" />
     </>
   );
 };
