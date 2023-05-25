@@ -8,7 +8,10 @@ export const CursorStyle = styled.div`
     height: ${props => props.height + "px"};
     background-color: ${props => props.background || props.theme.primaryBlue};
     border-radius: ${props => props.gradus};
-    border: ${props => props.border || "none"}
+    border: ${props => props.border || "none"};
+    transition-duration: ${props => props.tduration + "s" || "250ms"};
+    transition-timing-function: ${props => props.tfunction || "ease-out"};
+    transform: ${props => props.isScale ? `scale(1.4)` : `scale(1)`};
+    opacity: ${props => props.opacity || "1"};
     pointer-events: none;
-    transition: 150ms ease-out;
 `
