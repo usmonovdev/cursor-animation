@@ -2,10 +2,10 @@ import { keyframes, styled } from "styled-components";
 
 const animation = keyframes`
     0% {
-        transform: translateY(0px)
+        transform: scale(1)
     }
     100% {
-        transform: translateY(-15px)
+        transform: scale(1.2)
     }
 `
 

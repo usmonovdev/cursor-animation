@@ -4,14 +4,17 @@ import { ThemeProvider } from "styled-components";
 import { Container } from "./styled-components/container";
 import Welcome from "./components/Welcome";
 import Features from "./components/Features";
+import { DisplayFlex } from "./styled-components";
 
 function App() {
   return (
     <ThemeProvider theme={Theme}>
       <GlobalStyle />
       <Container>
-        <Welcome />
-        <Features />
+        <DisplayFlex flexDirection={"column"} gap={"30px"}>
+          <Welcome />
+          <Features />
+        </DisplayFlex>
       </Container>
     </ThemeProvider>
   );

@@ -36,6 +36,10 @@ export const GlobalStyle = createGlobalStyle`
         position: fixed;
         pointer-events: none;
     };
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
 `
 
 export const Theme = {
