@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import cursor from "../assets/cursor-1.png"
+import noise from "../assets/noise.gif"
 
 export const GlobalStyle = createGlobalStyle`
     * {
@@ -20,18 +21,21 @@ export const GlobalStyle = createGlobalStyle`
 
     body::before {
         content: '';
-        position: absolute;
+        position: fixed;
+        top: 0;
+        left:0;
         z-index: -1;
         opacity: .05;
         width: 100%;
         height: 100%;
         background-color: #639;
+        background-image: url(${noise});
     };
 
     .cursor {
         position: fixed;
         pointer-events: none;
-    }
+    };
 `
 
 export const Theme = {

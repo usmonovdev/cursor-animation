@@ -3,6 +3,7 @@ import { GlobalStyle, Theme } from "./styled-components/globalStyle";
 import { ThemeProvider } from "styled-components";
 import { Container } from "./styled-components/container";
 import Welcome from "./components/Welcome";
+import Features from "./components/Features";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <GlobalStyle />
       <Container>
         <Welcome />
+        <Features />
       </Container>
     </ThemeProvider>
   );

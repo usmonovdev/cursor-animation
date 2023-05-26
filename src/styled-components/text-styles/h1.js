@@ -5,4 +5,5 @@ export const H1 = styled.h1`
     font-size: 40px;
     font-weight: 500;
     pointer-events: none;
+    text-align: ${props => props.alignment};
 `
