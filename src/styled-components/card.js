@@ -5,13 +5,13 @@ export const Card = styled.div`
     position: relative;
     width: 100%;
     height: auto;
-    background-color: ${props => props.theme.primaryBlackBlue};
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    border-radius: 10px;
     gap: 20px;
     transition: 200ms;
+    &:active {
+        transform: scale(0.8)
+    };
     &::before {
         content: '';
         position: absolute;
@@ -24,7 +24,7 @@ export const Card = styled.div`
         background-image: linear-gradient(100deg,#13131d,#0398ed);
         border-radius: 15px;
         transition: 300ms;
-    }
+    };
     &:hover {
         &::before {
             transform: rotate(3deg);
@@ -33,7 +33,7 @@ export const Card = styled.div`
         img {
             transform: scale(1.05)
         }
-    }
+    };
     section {
         background: #1c2942;
         border-radius: 10px;
@@ -48,13 +48,18 @@ export const Card = styled.div`
                 width: 50%;
             }
         }
-    }
+    };
+`
+
+export const CardSection = styled.div`
+    padding: 10px;
+    background-color: ${props => props.theme.primaryBlackBlue};
+    border-radius: 10px;
 `
 
 export const CardBody = styled.div`
     width: 100%;
-    height: 100%;
-    padding: 0px 10px 10px 10px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
