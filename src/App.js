@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import { Container } from "./styled-components/container";
 import Welcome from "./components/Welcome";
 import Features from "./components/Features";
+import Demo from "./components/Demo";
 import { DisplayFlex } from "./styled-components";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <DisplayFlex flexDirection={"column"} gap={"30px"}>
           <Welcome />
           <Features />
+          <Demo/>
         </DisplayFlex>
       </Container>
     </ThemeProvider>

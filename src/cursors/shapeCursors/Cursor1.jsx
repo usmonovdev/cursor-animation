@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Theme } from "../styled-components/globalStyle"
+import { Theme } from "../../styled-components/globalStyle"
 
 const Cursor1 = ({ elementId }) => {
   const innerSize = 30;

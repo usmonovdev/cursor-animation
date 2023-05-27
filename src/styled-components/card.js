@@ -19,7 +19,6 @@ export const Card = styled.div`
         left: 0;
         width: 98%;
         height: 100%;
-        background: red;
         z-index: -1;
         background-image: linear-gradient(100deg,#13131d,#0398ed);
         border-radius: 15px;
@@ -42,7 +41,7 @@ export const Card = styled.div`
         justify-content: center;
         img {
             width: 100%;
-            height: fit-content;
+            height: 100%;
             transition: 200ms;
             @media (max-width: ${Large}) {
                 width: 50%;
