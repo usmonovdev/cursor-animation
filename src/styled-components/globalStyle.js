@@ -35,16 +35,18 @@ export const GlobalStyle = createGlobalStyle`
     .cursor {
         position: fixed;
         pointer-events: none;
+        z-index: 10000;
     };
 
     ::-webkit-scrollbar {
         display: none;
-    }
+    };
 `
 
 export const Theme = {
     body: '#fff6f1',
     primaryBlue: "#00a3ff",
     primaryBlackBlue: "#212e48",
+    blackBlue: "#1c2942",
     white: "#ffffff",
 };

@@ -34,7 +34,7 @@ export const Card = styled.div`
         }
     };
     section {
-        background: #1c2942;
+        background: ${props => props.theme.blackBlue};
         border-radius: 10px;
         display: flex;
         align-items: center;

@@ -3,7 +3,7 @@ import ShapeCursors from "./demos/ShapeCursors";
 
 const Demo = () => {
   return (
-    <div>
+    <div style={{ marginBottom: "40px" }}>
       <ShapeCursors />
     </div>
   );

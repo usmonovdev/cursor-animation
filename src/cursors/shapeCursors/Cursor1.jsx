@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Theme } from "../../styled-components/globalStyle"
+import { Theme } from "../../styled-components/globalStyle";
 
 const Cursor1 = ({ elementId }) => {
   const innerSize = 30;
@@ -9,7 +9,7 @@ const Cursor1 = ({ elementId }) => {
   const outerRef = useRef();
   const [isAvaliable, setIsAvaliable] = useState(true);
   const [isClicked, setIsClicked] = useState(false);
-  const [mousePosition, setMousePosition] = useState({x: 0, y: 0});
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const mouseMove = (e) => {
@@ -78,21 +78,20 @@ const Cursor1 = ({ elementId }) => {
       width: innerSize,
       height: innerSize,
       borderRadius: "50%",
-      // background: Theme.primaryBlue,
       border: `2px solid ${Theme.primaryBlue}`,
       transition: "150ms ease-out",
       display: `${isAvaliable ? "block" : "none"}`,
       opacity: "0.5",
-    }
-  }
+    },
+  };
 
   useEffect(() => {
-    if(isClicked) {
-      innerRef.current.style.transform = `scale(${innerScale})`
-      outerRef.current.style.transform = `scale(${outerScale})`
+    if (isClicked) {
+      innerRef.current.style.transform = `scale(${innerScale})`;
+      outerRef.current.style.transform = `scale(${outerScale})`;
     } else {
-      innerRef.current.style.transform = "scale(1)"
-      outerRef.current.style.transform = "scale(1)"
+      innerRef.current.style.transform = "scale(1)";
+      outerRef.current.style.transform = "scale(1)";
     }
   }, [isClicked, style]);
 
