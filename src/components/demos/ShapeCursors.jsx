@@ -1,12 +1,16 @@
 import React from "react";
 import { H1, H3, Paragraph } from "../../styled-components/text-styles";
-import Cursor1 from "../../cursors/shapeCursors/Cursor1";
-import Cursor2 from "../../cursors/shapeCursors/Cursor2";
 import { CursorCard, CursorCardBody, DisplayFlex, DisplayGrid } from "../../styled-components";
 import dollar from "../../assets/icon-5.png"
+import Cursor1 from "../../cursors/shapeCursors/Cursor1";
+import Cursor2 from "../../cursors/shapeCursors/Cursor2";
 import Cursor3 from "../../cursors/shapeCursors/Cursor3";
 import Cursor4 from "../../cursors/shapeCursors/Cursor4";
 import Cursor5 from "../../cursors/shapeCursors/Cursor5";
+import Cursor6 from "../../cursors/shapeCursors/Cursor6";
+import Cursor7 from "../../cursors/shapeCursors/Cursor7";
+import Cursor8 from "../../cursors/shapeCursors/Cursor8";
+import Cursor9 from "../../cursors/shapeCursors/Cursor9";
 
 const ShapeCursors = () => {
   return (
@@ -66,6 +70,50 @@ const ShapeCursors = () => {
           </section>
           <CursorCardBody>
             <H3>Cursor 5</H3>
+            <Paragraph>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, eligendi?</Paragraph>
+          </CursorCardBody>
+        </CursorCard>
+        {/* CURSOR 6 */}
+        <CursorCard id="cursor6">
+          <Cursor6 elementId={"cursor6"} />
+          <section>
+            <img src={dollar} alt="dollar icon" />
+          </section>
+          <CursorCardBody>
+            <H3>Cursor 6</H3>
+            <Paragraph>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, eligendi?</Paragraph>
+          </CursorCardBody>
+        </CursorCard>
+        {/* CURSOR 7 */}
+        <CursorCard id="cursor7">
+          <Cursor7 elementId={"cursor7"} />
+          <section>
+            <img src={dollar} alt="dollar icon" />
+          </section>
+          <CursorCardBody>
+            <H3>Cursor 7</H3>
+            <Paragraph>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, eligendi?</Paragraph>
+          </CursorCardBody>
+        </CursorCard>
+        {/* CURSOR 8 */}
+        <CursorCard id="cursor8">
+          <Cursor8 elementId={"cursor8"} />
+          <section>
+            <img src={dollar} alt="dollar icon" />
+          </section>
+          <CursorCardBody>
+            <H3>Cursor 8</H3>
+            <Paragraph>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, eligendi?</Paragraph>
+          </CursorCardBody>
+        </CursorCard>
+        {/* CURSOR 9 */}
+        <CursorCard id="cursor9">
+          <Cursor9 elementId={"cursor9"} />
+          <section>
+            <img src={dollar} alt="dollar icon" />
+          </section>
+          <CursorCardBody>
+            <H3>Cursor 9</H3>
             <Paragraph>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, eligendi?</Paragraph>
           </CursorCardBody>
         </CursorCard>
