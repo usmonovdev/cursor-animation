@@ -6,6 +6,10 @@ import WithIcons1 from "../../cursors/withIcons/WithIcons1";
 import WithIcons2 from "../../cursors/withIcons/WithIcons2";
 import WithIcons3 from "../../cursors/withIcons/WithIcons3";
 import WithIcons4 from "../../cursors/withIcons/WithIcons4";
+import WithIcons5 from "../../cursors/withIcons/WithIcons5";
+import WithIcons6 from "../../cursors/withIcons/WithIcons6";
+import WithIcons7 from "../../cursors/withIcons/WithIcons7";
+import WithIcons8 from "../../cursors/withIcons/WithIcons8";
 
 const WithIcons = () => {
   return (
@@ -62,6 +66,62 @@ const WithIcons = () => {
           </section>
           <CursorCardBody>
             <H3>With Icons 4</H3>
+            <Paragraph>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quibusdam, eligendi?
+            </Paragraph>
+          </CursorCardBody>
+        </CursorCard>
+        {/* CURSOR 5 */}
+        <CursorCard id="withIcons5">
+          <WithIcons5 elementId={"withIcons5"} />
+          <section>
+            <img src={icon} alt="dollar icon" />
+          </section>
+          <CursorCardBody>
+            <H3>With Icons 5</H3>
+            <Paragraph>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quibusdam, eligendi?
+            </Paragraph>
+          </CursorCardBody>
+        </CursorCard>
+        {/* CURSOR 6 */}
+        <CursorCard id="withIcons6">
+          <WithIcons6 elementId={"withIcons6"} />
+          <section>
+            <img src={icon} alt="dollar icon" />
+          </section>
+          <CursorCardBody>
+            <H3>With Icons 6</H3>
+            <Paragraph>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quibusdam, eligendi?
+            </Paragraph>
+          </CursorCardBody>
+        </CursorCard>
+        {/* CURSOR 7 */}
+        <CursorCard id="withIcons7">
+          <WithIcons7 elementId={"withIcons7"} />
+          <section>
+            <img src={icon} alt="dollar icon" />
+          </section>
+          <CursorCardBody>
+            <H3>With Icons 7</H3>
+            <Paragraph>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quibusdam, eligendi?
+            </Paragraph>
+          </CursorCardBody>
+        </CursorCard>
+        {/* CURSOR 8 */}
+        <CursorCard id="withIcons8">
+          <WithIcons8 elementId={"withIcons8"} />
+          <section>
+            <img src={icon} alt="dollar icon" />
+          </section>
+          <CursorCardBody>
+            <H3>With Icons 8</H3>
             <Paragraph>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Quibusdam, eligendi?
