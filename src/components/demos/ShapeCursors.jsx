@@ -14,9 +14,8 @@ import Cursor9 from "../../cursors/shapeCursors/Cursor9";
 
 const ShapeCursors = () => {
   return (
-    <DisplayFlex flexDirection={"column"} gap={"10px"}>
+    <DisplayFlex flexDirection={"column"} gap={"20px"}>
       <H1 alignment={"center"}>Shape Cursors</H1>
-      <Paragraph alignment={"center"}>18 shapes, 15 styles</Paragraph>
       <DisplayGrid>
         {/* CURSOR 1 */}
         <CursorCard id="cursor1">
