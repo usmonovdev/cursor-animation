@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Theme } from "../../styled-components/globalStyle";
-import icon3 from "../../assets/cursor-icons/4.png"
+import icon from "../../assets/cursor-icons/4.png"
 
 const WithIcons4 = ({ elementId }) => {
   const innerSize = 70;
@@ -105,7 +105,7 @@ const WithIcons4 = ({ elementId }) => {
     <>
       <div ref={innerRef} style={style.innerStyle} className="cursor" />
       <div ref={outerRef} style={style.outerStyle} className="cursor">
-        <img src={icon3} alt="icon-3" style={style.imageStyle} />
+        <img src={icon} alt="icon" style={style.imageStyle} />
       </div>
     </>
   );

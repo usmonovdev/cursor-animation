@@ -3,14 +3,12 @@ import { Theme } from "../../styled-components/globalStyle";
 
 const Cursor9 = ({ elementId }) => {
   const innerSize = 30;
-  // const innerScale = 0.7;
   const outerScale = 1.4;
   const rotate = "45deg";
-  // const innerRef = useRef();
   const outerRef = useRef();
   const [isAvaliable, setIsAvaliable] = useState(true);
   const [isClicked, setIsClicked] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState({ x: -40, y: -40 });
 
   useEffect(() => {
     const mouseMove = (e) => {
@@ -63,16 +61,6 @@ const Cursor9 = ({ elementId }) => {
   }, []);
 
   const style = {
-    // innerStyle: {
-    //   top: mousePosition.y,
-    //   left: mousePosition.x,
-    //   width: innerSize,
-    //   height: innerSize,
-    //   background: Theme.primaryBlue,
-    //   transition: "transform 150ms ease-out",
-    //   transform: "rotate(45deg)",
-    //   display: `${isAvaliable ? "block" : "none"}`,
-    // },
     outerStyle: {
       top: mousePosition.y,
       left: mousePosition.x,
@@ -97,7 +85,6 @@ const Cursor9 = ({ elementId }) => {
 
   return (
     <>
-      {/* <div ref={innerRef} style={style.innerStyle} className="cursor" /> */}
       <div ref={outerRef} style={style.outerStyle} className="cursor" />
     </>
   );

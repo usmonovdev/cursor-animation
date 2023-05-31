@@ -8,7 +8,7 @@ const Cursor6 = ({ elementId }) => {
   const outerRef = useRef();
   const [isAvaliable, setIsAvaliable] = useState(true);
   const [isClicked, setIsClicked] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState({ x: -50, y: -50 });
 
   useEffect(() => {
     const mouseMove = (e) => {

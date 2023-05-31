@@ -1,16 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Theme } from "../../styled-components/globalStyle";
+import icon from "../../assets/cursor-icons/9.png"
 
-const Cursor7 = ({ elementId }) => {
-  const innerSize = 30;
+const WithIcons9 = ({ elementId }) => {
+  const innerSize = 70;
   const innerScale = 0.7;
-  const outerScale = 1.4;
-  const rotate = "45deg";
   const innerRef = useRef();
   const outerRef = useRef();
   const [isAvaliable, setIsAvaliable] = useState(true);
   const [isClicked, setIsClicked] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: -40, y: -40 });
+  const [mousePosition, setMousePosition] = useState({ x: -70, y: -70 });
 
   useEffect(() => {
     const mouseMove = (e) => {
@@ -68,9 +67,9 @@ const Cursor7 = ({ elementId }) => {
       left: mousePosition.x,
       width: innerSize,
       height: innerSize,
-      background: Theme.primaryBlue,
-      transition: "transform 150ms ease-out",
-      transform: "rotate(45deg)",
+      borderRadius: "50%",
+      border: `2px solid ${Theme.primaryBlue}`,
+      transition: "transform 150ms ease-out, top 80ms ease-out",
       display: `${isAvaliable ? "block" : "none"}`,
     },
     outerStyle: {
@@ -79,8 +78,11 @@ const Cursor7 = ({ elementId }) => {
       width: innerSize,
       height: innerSize,
       background: Theme.primaryBlue,
-      transition: "150ms ease-out",
-      display: `${isAvaliable ? "block" : "none"}`,
+      borderRadius: "50%",
+      transition: "transform 150ms ease-out, top 80ms ease-out",
+      display: `${isAvaliable ? "flex" : "none"}`,
+      alignItems: "center",
+      justifyContent: "center",
       opacity: "0.5",
     },
   };
@@ -88,21 +90,21 @@ const Cursor7 = ({ elementId }) => {
   useEffect(() => {
     if (isClicked) {
       innerRef.current.style.transform = `scale(${innerScale})`;
-      outerRef.current.style.transform = `scale(${outerScale})`;
+      outerRef.current.style.transform = `scale(${innerScale})`;
     } else {
       innerRef.current.style.transform = "scale(1)";
-      innerRef.current.style.transform += `rotate(${rotate})`;
       outerRef.current.style.transform = "scale(1)";
-      outerRef.current.style.transform += `rotate(${rotate})`;
     }
   }, [isClicked, style]);
 
   return (
     <>
       <div ref={innerRef} style={style.innerStyle} className="cursor" />
-      <div ref={outerRef} style={style.outerStyle} className="cursor" />
+      <div ref={outerRef} style={style.outerStyle} className="cursor">
+        <img src={icon} alt="icon" />
+      </div>
     </>
   );
 };
 
-export default Cursor7;
+export default WithIcons9;

@@ -1,14 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Theme } from "../../styled-components/globalStyle";
-import icon1 from "../../assets/cursor-icons/2.png";
+import icon from "../../assets/cursor-icons/2.png";
 
 const WithIcons2 = ({ elementId }) => {
   const innerSize = 70;
-  const innerScale = 0.7;
+  const innerScale = 0.8;
+  const outerScale = 1.1;
   const innerRef = useRef();
+  const outerRef = useRef();
   const [isAvaliable, setIsAvaliable] = useState(true);
   const [isClicked, setIsClicked] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: -90, y: -90 });
+  const [mousePosition, setMousePosition] = useState({ x: -70, y: -70 });
 
   useEffect(() => {
     const mouseMove = (e) => {
@@ -66,32 +68,46 @@ const WithIcons2 = ({ elementId }) => {
       left: mousePosition.x,
       width: innerSize,
       height: innerSize,
-      borderRadius: "20%",
-      background: Theme.primaryBlue,
-      transition: "transform 150ms ease-out, top 80ms ease-out",
+      borderRadius: "40%",
+      transition: "transform 150ms ease-out",
       display: `${isAvaliable ? "flex" : "none"}`,
       alignItems: "center",
-      justifyContent: "center"
+      justifyContent: "center",
+      zIndex: "100",
+    },
+    outerStyle: {
+      top: mousePosition.y,
+      left: mousePosition.x,
+      width: innerSize,
+      height: innerSize,
+      borderRadius: "40%",
+      background: Theme.primaryBlue,
+      transition: "150ms ease-out",
+      display: `${isAvaliable ? "block" : "none"}`,
+      zIndex: "50"
     },
     imageStyle: {
-      width: "30px",
-      height: "30px",
+      width: "25px",
+      height: "25px",
     }
   };
 
   useEffect(() => {
     if (isClicked) {
       innerRef.current.style.transform = `scale(${innerScale})`;
+      outerRef.current.style.transform = `scale(${outerScale})`;
     } else {
       innerRef.current.style.transform = "scale(1)";
+      outerRef.current.style.transform = "scale(1)";
     }
   }, [isClicked, style]);
 
   return (
     <>
       <div ref={innerRef} style={style.innerStyle} className="cursor">
-        <img src={icon1} alt="icon 1" style={style.imageStyle} />
+        <img src={icon} alt="icon" style={style.imageStyle} />
       </div>
+      <div ref={outerRef} style={style.outerStyle} className="cursor" />
     </>
   );
 };

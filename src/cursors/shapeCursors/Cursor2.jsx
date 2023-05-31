@@ -3,14 +3,13 @@ import { Theme } from "../../styled-components/globalStyle";
 
 const Cursor2 = ({ elementId }) => {
   const innerSize = 30;
-  // const outerSize = 30;
   const innerScale = 0.7;
   const outerScale = 1.4;
   const innerRef = useRef();
   const outerRef = useRef();
   const [isAvaliable, setIsAvaliable] = useState(true);
   const [isClicked, setIsClicked] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState({ x: -40, y: -40 });
 
   useEffect(() => {
     const mouseMove = (e) => {

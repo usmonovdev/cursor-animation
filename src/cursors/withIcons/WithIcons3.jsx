@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Theme } from "../../styled-components/globalStyle";
-import icon3 from "../../assets/cursor-icons/3.png"
+import icon from "../../assets/cursor-icons/3.png";
 
 const WithIcons3 = ({ elementId }) => {
   const innerSize = 70;
-  const innerScale = 0.7;
+  const innerScale = 0.8;
+  const outerScale = 1.1;
   const innerRef = useRef();
   const outerRef = useRef();
   const [isAvaliable, setIsAvaliable] = useState(true);
@@ -68,29 +69,34 @@ const WithIcons3 = ({ elementId }) => {
       width: innerSize,
       height: innerSize,
       borderRadius: "50%",
-      border: `2px solid ${Theme.primaryBlue}`,
-      transition: "transform 150ms ease-out, top 80ms ease-out",
-      display: `${isAvaliable ? "block" : "none"}`,
+      transition: "transform 150ms ease-out",
+      display: `${isAvaliable ? "flex" : "none"}`,
+      alignItems: "center",
+      justifyContent: "center",
+      zIndex: "100",
     },
     outerStyle: {
       top: mousePosition.y,
       left: mousePosition.x,
       width: innerSize,
       height: innerSize,
-      background: Theme.primaryBlue,
       borderRadius: "50%",
-      transition: "transform 150ms ease-out, top 80ms ease-out",
-      display: `${isAvaliable ? "flex" : "none"}`,
-      alignItems: "center",
-      justifyContent: "center",
+      background: Theme.primaryBlue,
+      transition: "150ms ease-out",
+      display: `${isAvaliable ? "block" : "none"}`,
       opacity: "0.5",
+      zIndex: "50"
     },
+    imageStyle: {
+      width: "25px",
+      height: "25px",
+    }
   };
 
   useEffect(() => {
     if (isClicked) {
       innerRef.current.style.transform = `scale(${innerScale})`;
-      outerRef.current.style.transform = `scale(${innerScale})`;
+      outerRef.current.style.transform = `scale(${outerScale})`;
     } else {
       innerRef.current.style.transform = "scale(1)";
       outerRef.current.style.transform = "scale(1)";
@@ -99,10 +105,10 @@ const WithIcons3 = ({ elementId }) => {
 
   return (
     <>
-      <div ref={innerRef} style={style.innerStyle} className="cursor" />
-      <div ref={outerRef} style={style.outerStyle} className="cursor">
-        <img src={icon3} alt="icon-3" />
+      <div ref={innerRef} style={style.innerStyle} className="cursor">
+        <img src={icon} alt="icon" style={style.imageStyle} />
       </div>
+      <div ref={outerRef} style={style.outerStyle} className="cursor" />
     </>
   );
 };
